@@ -1,0 +1,3 @@
+package id.rifqipadisiliwangi.tokopaerbe.presentation.feature.splash
+
+class SplashFragmentTest

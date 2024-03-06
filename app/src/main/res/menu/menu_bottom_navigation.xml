@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuHome"
+        android:icon="@drawable/ic_home"
+        android:enabled="true"
+        android:title="@string/string_beranda"
+        />
+
+    <item
+        android:id="@+id/menuStore"
+        android:icon="@drawable/ic_store"
+        android:enabled="true"
+        android:title="@string/string_toko"/>
+
+    <item
+        android:id="@+id/menuWishlist"
+        android:icon="@drawable/ic_wishlist"
+        android:enabled="true"
+        android:title="@string/string_keranjang"/>
+
+    <item
+        android:id="@+id/menuTransaction"
+        android:icon="@drawable/ic_list_all"
+        android:enabled="true"
+        android:title="@string/string_riwayat"/>
+
+</menu>

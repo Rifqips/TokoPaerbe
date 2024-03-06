@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.feature.filter.FilterFragment">
+
+    <TextView
+        android:id="@+id/tv_title_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_filter"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_title_shorting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_urutkan"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_reset_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_reset"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/primary_purple"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="16dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_shorting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:rippleColor ="@color/primary_purple"
+        app:checkedChip="@+id/cp_reviews"
+        app:chipSpacingHorizontal="12dp"
+        app:chipSpacingVertical="8dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_shorting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_reviews"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            android:checked="true"
+            app:chipCornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_ulasan"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_selling"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            app:chipCornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_penjualan" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_lowest_price"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            app:chipCornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_harga_terendah" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_highest_price"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            app:chipCornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_harga_tertinggi"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/tv_title_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_category"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/cg_shorting"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:checkedChip="@+id/cp_Apple"
+        app:chipSpacingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_Apple"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_apple"
+            app:chipEndPadding="16dp"
+            app:chipStartPadding="16dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_assus"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_asus"
+            app:chipEndPadding="16dp"
+            app:chipStartPadding="16dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_dell"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/dell"
+            app:chipEndPadding="16dp"
+            app:chipStartPadding="16dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_lenovo"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/string_lenovo"
+            app:chipEndPadding="16dp"
+            app:chipStartPadding="16dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/tv_title_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_harga"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        app:layout_constraintTop_toBottomOf="@+id/cg_category"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_lowest_price_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:hint="@string/string_terendah">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_lowest_price_edit"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:textColorHint="?attr/colorControlNormal"
+                android:textColor="?attr/colorControlNormal"
+                android:fontFamily="@font/poppins"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_highest_price_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:hint="@string/string_tertinggi">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_highest_price_edit"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:textColorHint="?attr/colorControlNormal"
+                android:textColor="?attr/colorControlNormal"
+                android:fontFamily="@font/poppins"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingTop="10dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        tools:text="@string/string_tampilkan_produk"
+        android:backgroundTint="@color/primary_purple"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

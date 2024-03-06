@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.feature.store.StoreFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/layout_state_search"
+            layout="@layout/layout_no_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_category_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:checkedChip="@+id/cp_Apple"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_marginVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_search_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_filter"
+            android:textSize="12sp"
+            app:chipIcon="@drawable/ic_filter" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textSize="12sp"
+            tools:text="@string/label" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textSize="12sp"
+            tools:text="@string/label"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textSize="12sp"
+            tools:text="@string/label"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginVertical="12dp"
+        android:background="@color/secondary_black"
+        app:layout_constraintBottom_toBottomOf="@+id/cg_category_filter"
+        app:layout_constraintTop_toTopOf="@+id/cg_category_filter"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/iv_change_layout"
+        android:layout_width="34dp"
+        android:layout_height="45dp"
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:background="@android:color/transparent"
+        app:chipBackgroundColor="@android:color/transparent"
+        android:checkable="true"
+        app:checkedIconEnabled="false"
+        app:checkedChip="@+id/iv_change_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/cg_category_filter"
+        app:layout_constraintTop_toTopOf="@+id/cg_category_filter"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/cg_category_filter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_store"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <id.rifqipadisiliwangi.tokopaerbe.presentation.customview.ErrorStateStore
+        android:id="@+id/state_error_store"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_store"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_base_color="@color/color_shimmer"
+        app:shimmer_direction="left_to_right"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear"
+        android:visibility="gone"
+        android:layout_marginVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_search_bar"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_shimmer_header_linear" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_store_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_base_color="@color/color_shimmer"
+        app:shimmer_direction="left_to_right"
+        app:shimmer_repeat_mode="restart"
+        app:shimmer_shape="linear"
+        android:visibility="gone"
+        android:layout_marginVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_search_bar"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_shimmer_header" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

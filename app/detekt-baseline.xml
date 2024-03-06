@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ClassNaming:utils.kt$utils</ID>
+    <ID>CyclomaticComplexMethod:HomeFragment.kt$HomeFragment$private fun setUpFragment()</ID>
+    <ID>DestructuringDeclarationWithTooManyEntries:CheckoutAdapter.kt$CheckoutAdapter$val (productId, productImage, productName, productVariant, productStock, productPrice, productQuantity) = listCheckoutProduct[position]</ID>
+    <ID>EmptyFunctionBlock:CheckoutProductFragment.kt$CheckoutProductFragment${ }</ID>
+    <ID>EmptyFunctionBlock:CustomView.kt$CustomView.&lt;no name provided&gt;${}</ID>
+    <ID>EmptyFunctionBlock:PaymentMethodsFragment.kt$PaymentMethodsFragment${}</ID>
+    <ID>EmptyFunctionBlock:TextWatcherConfiguration.kt$TextWatcherConfiguration${}</ID>
+    <ID>EmptyFunctionBlock:TransactionFragment.kt$TransactionFragment${}</ID>
+    <ID>EmptyFunctionBlock:WishlistFragment.kt$WishlistFragment${}</ID>
+    <ID>ExplicitItLambdaParameter:CartFragment.kt$CartFragment${ it -&gt; val productId = it.productId val productImage = it.image val productName = it.productName val productVariant = it.variantName val productStock = it.stock val productPrice = it.productPrice val productQuantity = it.quantity CheckoutDataClass( productId, productImage, productName, productVariant, productStock, productPrice, productQuantity ) }</ID>
+    <ID>ExplicitItLambdaParameter:DetailProductFragment.kt$DetailProductFragment${ it -&gt; it.proceedWhen ( doOnLoading = { binding.layoutStateDetail.pbLoading.isVisible = true binding.layoutStateDetail.tvError.isVisible = false }, doOnSuccess = { binding.layoutStateDetail.pbLoading.isVisible = false binding.layoutStateDetail.tvError.isVisible = true it.payload.let { with(binding){ tvDetailPrice.text = it?.productPrice?.toCurrencyFormat() tvDetailResultDescription.text = "${resources.getString(R.string.string_hasil_penjualan)} ${it?.sale.toString()}" tvDetailDescription.text = it?.productName tvDescriptionProduct.text = it?.brand tvResultDescriptionProduct.text = it?.description productId = it?.productId.toString() tvRateUsers.text = it?.productRating.toString() tvResultRate.text = "${it?.productRating} (${it?.totalReview})" tvReviewsDescription.text = "${it?.totalRating} rating ${it?.totalReview} review" svDetailStore.isVisible = true if (it != null) { setUpvp(it.image) tabs.isVisible = it.image.size &gt; 1 } it?.productVariant?.forEach { chipItem -&gt; val chip = Chip(context) chip.text = chipItem.variantName chip.isClickable = true chip.isCheckable = true cgVarian.addView(chip) chip.setOnCheckedChangeListener { _, isChecked -&gt; when (isChecked) { true -&gt; { val priceResult = it.productPrice + chipItem.variantPrice tvDetailPrice.text = priceResult.toCurrencyFormat() } else -&gt; tvDetailPrice.text = it.productPrice.toCurrencyFormat() } } } } if (it != null) { addWishlist( it.productId, it.productName, it.productPrice, it.image[0], it.store, it.productRating.toFloat(), it.sale, it.stock, it.productVariant.toString(), 1 ) getFavorite(it.productId) getCartById(it.productId) addCartList( it.productId, it.productName, it.productVariant.map { it.variantName }.toString(), it.stock, it.productPrice.toString().toInt(), 1, it.image[0], false ) } } } ) }</ID>
+    <ID>ExplicitItLambdaParameter:SearchStoreFragment.kt$SearchStoreFragment${ it -&gt; binding.layoutStateDetail.pbLoading.isVisible = false binding.layoutStateDetail.tvError.isVisible = true rvListSuggestion.layoutManager = LinearLayoutManager(context) rvListSuggestion.adapter = it.payload?.let { it1 -&gt; SearchAdapter(it1.data){ setEditTextSearch(it) viewModel.saveKeySearch(it) findNavController().popBackStack(R.id.searchStoreFragment,true) } } }</ID>
+    <ID>LongMethod:CartFragment.kt$CartFragment$private fun setUpAdapter()</ID>
+    <ID>LongMethod:DetailProductFragment.kt$DetailProductFragment$@SuppressLint("SetTextI18n") private fun observeData()</ID>
+    <ID>LongParameterList:CartAdapter.kt$CartAdapter$( private val viewModel : CartViewModel, private var itemList: List&lt;CartKeys&gt;, private val itemSelectedAll : (Boolean, Int, CartKeys) -&gt; Unit, private val itemSelected : (Boolean, Int, CartKeys) -&gt; Unit, private val itemSelectedPlus : (CartKeys,Int) -&gt; Unit, private val itemSelectedMinus : (CartKeys,Int) -&gt; Unit, private val itemDelete : (CartKeys, Int) -&gt; Unit, )</ID>
+    <ID>LongParameterList:DetailProductFragment.kt$DetailProductFragment$( id: String, productName: String, productPrice: Int, image: String, store: String, productRating: Float, sale: Int, stock: Int, variantName: String, quantity: Int )</ID>
+    <ID>LongParameterList:DetailProductFragment.kt$DetailProductFragment$( id: String, productName: String, variantName: String, stock: Int, productPrice: Int, quantity: Int, image: String, isChecked: Boolean, )</ID>
+    <ID>LongParameterList:DetailViewModel.kt$DetailViewModel$( id: String, productName: String, productPrice: Int, image: String, store: String, productRating: Float, sale: Int, stock: Int, variantName: String, quantity: Int )</ID>
+    <ID>LongParameterList:DetailViewModel.kt$DetailViewModel$( id: String, productName: String, variantName: String, stock: Int, productPrice: Int, quantity: Int, image: String, isChecked: Boolean, )</ID>
+    <ID>LongParameterList:NotificationViewModel.kt$NotificationViewModel$( notifId: Int, notifType: String, notifTitle: String, notifBody: String, notifDate: String, notifTime: String, notifImage: String, isChecked: Boolean )</ID>
+    <ID>MagicNumber:CartFragment.kt$CartFragment$2000</ID>
+    <ID>MagicNumber:CheckoutAdapter.kt$CheckoutAdapter$5</ID>
+    <ID>MagicNumber:Constant.kt$Constant$5</ID>
+    <ID>MagicNumber:CustomView.kt$CustomView$300</ID>
+    <ID>MagicNumber:CustomView.kt$CustomView$40</ID>
+    <ID>MagicNumber:HomeFragment.kt$HomeFragment$600f</ID>
+    <ID>MagicNumber:HomeFragment.kt$HomeFragment$840f</ID>
+    <ID>MagicNumber:ImageSaver.kt$ImageSaver$100</ID>
+    <ID>MagicNumber:LoginFragment.kt$LoginFragment$3000</ID>
+    <ID>MagicNumber:LoginFragment.kt$LoginFragment$5</ID>
+    <ID>MagicNumber:NotificationFragment.kt$NotificationFragment$1000</ID>
+    <ID>MagicNumber:PaymentMethodsAdapter.kt$PaymentMethodsAdapter.ListViewHolder$0.4f</ID>
+    <ID>MagicNumber:RegisterFragment.kt$RegisterFragment$5</ID>
+    <ID>MagicNumber:RegisterProfileFragment.kt$RegisterProfileFragment$100</ID>
+    <ID>MagicNumber:RegisterProfileFragment.kt$RegisterProfileFragment$2000</ID>
+    <ID>MagicNumber:RegisterProfileFragment.kt$RegisterProfileFragment$2500</ID>
+    <ID>MagicNumber:RegisterProfileFragment.kt$RegisterProfileFragment$3000</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$1000</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$100f</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$15f</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$170f</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$2000</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$30f</ID>
+    <ID>MagicNumber:SplashFragment.kt$SplashFragment$40f</ID>
+    <ID>MagicNumber:StoreFragment.kt$StoreFragment$401</ID>
+    <ID>MagicNumber:StoreFragment.kt$StoreFragment$402</ID>
+    <ID>MagicNumber:StoreFragment.kt$StoreFragment$403</ID>
+    <ID>MagicNumber:StoreFragment.kt$StoreFragment$404</ID>
+    <ID>MagicNumber:StoreFragment.kt$StoreFragment$500</ID>
+    <ID>MagicNumber:StoreListViewModel.kt$StoreListViewModel$200</ID>
+    <ID>MaxLineLength:CheckoutProductFragment.kt$CheckoutProductFragment$BaseFragment&lt;FragmentCheckoutProductBinding, CheckoutViewModel&gt;(FragmentCheckoutProductBinding::inflate), CheckoutAdapter.OnItemClickListener</ID>
+    <ID>MaxLineLength:Constant.kt$Constant$val dummyNotif = "Transaksi anda sedang di proses oleh penjual, mohon ditunggu untuk update selanjutnya di aplikasi. Sambil menunggu, anda bisa cari barang lain terlebih dahulu"</ID>
+    <ID>MaxLineLength:DashboardFragment.kt$DashboardFragment$activity?.supportFragmentManager?.findFragmentById(R.id.container_navigation)?.findNavController()?.navigate(R.id.action_homeFragment_to_loginFragment)</ID>
+    <ID>MaxLineLength:DetailProductFragment.kt$DetailProductFragment$Toast.makeText(context, resources.getString(R.string.string_success_added_to_Cart), Toast.LENGTH_SHORT).show()</ID>
+    <ID>MaxLineLength:DetailProductFragment.kt$DetailProductFragment$Toast.makeText(context, resources.getString(R.string.string_success_added_to_wishlist), Toast.LENGTH_SHORT).show()</ID>
+    <ID>MaxLineLength:DetailProductFragment.kt$DetailProductFragment$tvDetailResultDescription.text = "${resources.getString(R.string.string_hasil_penjualan)} ${it?.sale.toString()}"</ID>
+    <ID>MaxLineLength:DetailProductFragment.kt$DetailProductFragment$viewModel.addWishlist(id, productName, productPrice, image, store, productRating, sale, stock, variantName, quantity)</ID>
+    <ID>MaxLineLength:DetailViewModel.kt$DetailViewModel$appRoominteractor.invoke(id, productName, productPrice, image, store, productRating, sale, stock, variantName, quantity)</ID>
+    <ID>MaxLineLength:HomeFragment.kt$HomeFragment$R.id.menuNotifikasi -&gt; findNavController().navigate(R.id.action_homeFragment_to_notificationFragment)</ID>
+    <ID>MaxLineLength:LoadStateAdapter.kt$LoadStateAdapter$LoadStateAdapter&lt;id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.load.LoadStateAdapter.LoadStateViewHolder&gt;()</ID>
+    <ID>MaxLineLength:MainDispatchersRule.kt$MainDispatchersRule$class</ID>
+    <ID>MaxLineLength:MyFirebaseMessagingService.kt$MyFirebaseMessagingService$model = ViewModelProvider.AndroidViewModelFactory.getInstance(application).create(NotificationViewModel::class.java)</ID>
+    <ID>MaxLineLength:NotificationFragment.kt$NotificationFragment$class</ID>
+    <ID>MaxLineLength:PaymentMethodsFragment.kt$PaymentMethodsFragment$class</ID>
+    <ID>MaxLineLength:PaymentMethodsFragment.kt$PaymentMethodsFragment$firebaseAnalytics.logEvent("payment_list", Bundle().apply { putString("screenName", getString(R.string.string_pilih_pembayaran)) })</ID>
+    <ID>MaxLineLength:ReceiptPaymentFragment.kt$ReceiptPaymentFragment$class</ID>
+    <ID>MaxLineLength:ReceiptPaymentFragment.kt$ReceiptPaymentFragment$val userRating = RatingRequest(itemTransaction?.invoiceId, binding.ratingProduct.rating.toInt().toString().trim(), binding.etReviews.text.toString().trim())</ID>
+    <ID>MaxLineLength:ReviewAdapter.kt$ReviewAdapter.&lt;no name provided&gt;$override</ID>
+    <ID>MaxLineLength:ReviewProductFragment.kt$ReviewProductFragment$class</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$BaseFragment&lt;FragmentStoreBinding, StoreListViewModel&gt;(FragmentStoreBinding::inflate), FilterFragment.OnFilterListener</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$activity?.supportFragmentManager?.findFragmentById(R.id.container_navigation)?.findNavController()?.navigate(R.id.action_homeFragment_to_detailProductFragment, bundle)</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$activity?.supportFragmentManager?.findFragmentById(R.id.container_navigation)?.findNavController()?.navigate(R.id.action_homeFragment_to_searchStoreFragment)</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$else -&gt; ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_list_layout) }</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_grid) }</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_list_layout) }</ID>
+    <ID>MaxLineLength:StoreFragment.kt$StoreFragment$true -&gt; ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_grid) }</ID>
+    <ID>MaxLineLength:TransactionAdapter.kt$TransactionAdapter.LinearMenuItemViewHolder$tvResultQuantity.text = "${item.items.joinToString { it.quantity.toString() }}${R.string.string_dummy_quantity}"</ID>
+    <ID>MaxLineLength:TransactionFragment.kt$TransactionFragment$class</ID>
+    <ID>MaxLineLength:WishlistFragment.kt$WishlistFragment$else -&gt; binding.ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_list_layout) }</ID>
+    <ID>MaxLineLength:WishlistFragment.kt$WishlistFragment$true -&gt; binding.ivChangeLayout.chipIcon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_grid) }</ID>
+    <ID>MaxLineLength:utils.kt$utils$accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJlY29tbWVyY2UtYXVkaWVuY2UiLCJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNTMuMTI1OjUwMDAvIiwidXNlcklkIjoiODM0Yjk4YWQtZDcwYi00NGNhLTg4ZDMtZTU3NzFlNDNhYjU3IiwidG9rZW5UeXBlIjoiYWNjZXNzVG9rZW4iLCJleHAiOjE2OTgxMjM1MTV9.PRLiDsyvP00xWyWRUP4ySqL4hsiRp4Twelvwx8HsWQT7guasEXTRaMOb8f9gYEGflTPOuW_MDqYHzlSkF9Y8Mw"</ID>
+    <ID>MaxLineLength:utils.kt$utils$refreshToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJlY29tbWVyY2UtYXVkaWVuY2UiLCJpc3MiOiJodHRwOi8vMTkyLjE2OC4xNTMuMTI1OjUwMDAvIiwidXNlcklkIjoiODM0Yjk4YWQtZDcwYi00NGNhLTg4ZDMtZTU3NzFlNDNhYjU3IiwidG9rZW5UeXBlIjoiYWNjZXNzVG9rZW4iLCJleHAiOjE2OTgxMjM1MTV9.PRLiDsyvP00xWyWRUP4ySqL4hsiRp4Twelvwx8HsWQT7guasEXTRaMOb8f9gYEGflTPOuW_MDqYHzlSkF9Y8Mw"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val countingNumber ="1"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dataIntentExtras = "data"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val detail_bundle = "detail"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyDatetime = "22:00"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyDatetimeTitle = "Datetime"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyDone = "Done"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyHarga ="Rp23.499.000"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyItem = "1 Item"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyNotif = "Transaksi anda sedang di proses oleh penjual, mohon ditunggu untuk update selanjutnya di aplikasi. Sambil menunggu, anda bisa cari barang lain terlebih dahulu"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyReview = "Review"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyShop = "Shop"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val dummyTotalSpending = "Total Spending"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val en = "en"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val idn = "in"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val ig = "https://instagram.com"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val imageOutput = "image/*"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val information = "Information"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val merk = "Lenovo Legion 7 16 I7 11800 16GB 1TB SSD RTX3070 8GB Windows 11 QHD IPS"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val minus ="-"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val paymentSucces = "Payment Success"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val plus ="+"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val png = ".png"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val review_bundle = "review"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val tokoPaerbe = "paerbe-"</ID>
+    <ID>MayBeConst:Constant.kt$Constant$val yt = "https://youtube.com"</ID>
+    <ID>MayBeConst:WishlistItemViewHolder.kt$GridWishlistItemViewHolder.Companion$val btnOrder ="Shop"</ID>
+    <ID>NewLineAtEndOfFile:AdapterLayoutMode.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.AdapterLayoutMode.kt</ID>
+    <ID>NewLineAtEndOfFile:ApiException.kt$id.rifqipadisiliwangi.tokopaerbe.utils.exceptions.ApiException.kt</ID>
+    <ID>NewLineAtEndOfFile:App.kt$id.rifqipadisiliwangi.tokopaerbe.App.kt</ID>
+    <ID>NewLineAtEndOfFile:AssetWrapperApp.kt$id.rifqipadisiliwangi.tokopaerbe.utils.AssetWrapperApp.kt</ID>
+    <ID>NewLineAtEndOfFile:BaseFragment.kt$id.rifqipadisiliwangi.tokopaerbe.utils.base.BaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:CartAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.cart.CartAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:CartFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.cart.CartFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:CartViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.cart.CartViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:CheckoutProductFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.checkout.CheckoutProductFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:CheckoutViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.checkout.CheckoutViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:ChoosePaymentAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.payment.choose.ChoosePaymentAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:Constant.kt$id.rifqipadisiliwangi.tokopaerbe.utils.Constant.kt</ID>
+    <ID>NewLineAtEndOfFile:DashboardFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.dashboard.DashboardFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DashboardViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.dashboard.DashboardViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:DetailProductFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.detail.DetailProductFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DetailViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.detail.DetailViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:ErrorStateStore.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.customview.ErrorStateStore.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$id.rifqipadisiliwangi.tokopaerbe.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FilterFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.filter.FilterFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:Helper.kt$id.rifqipadisiliwangi.tokopaerbe.utils.Helper.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.home.HomeFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:HomeViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.home.HomeViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:IOnBackPressed.kt$id.rifqipadisiliwangi.tokopaerbe.utils.IOnBackPressed.kt</ID>
+    <ID>NewLineAtEndOfFile:ImageSaver.kt$id.rifqipadisiliwangi.tokopaerbe.utils.ImageSaver.kt</ID>
+    <ID>NewLineAtEndOfFile:LiveDataTestUnit.kt$id.rifqipadisiliwangi.tokopaerbe.utils.LiveDataTestUnit.kt</ID>
+    <ID>NewLineAtEndOfFile:LoadStateAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.load.LoadStateAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:LoginViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.login.LoginViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:LoginViewModelTest.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.login.LoginViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:MainDispatchersRule.kt$id.rifqipadisiliwangi.tokopaerbe.utils.MainDispatchersRule.kt</ID>
+    <ID>NewLineAtEndOfFile:NoInternetException.kt$id.rifqipadisiliwangi.tokopaerbe.utils.exceptions.NoInternetException.kt</ID>
+    <ID>NewLineAtEndOfFile:NotificationAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.notification.NotificationAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:NotificationFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.notification.NotificationFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:NotificationViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.notification.NotificationViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:OnboardingAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.onboarding.OnboardingAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:OnboardingFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.onboarding.OnboardingFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:OnboardingViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.onboarding.OnboardingViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:PaymentMethodsAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.payment.method.PaymentMethodsAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:PaymentViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.payment.PaymentViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:PurchaseFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.purchase.PurchaseFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ReceiptPaymentFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.receipt.ReceiptPaymentFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.register.RegisterFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterProfileFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.profile.RegisterProfileFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterProfileViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.profile.RegisterProfileViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterProfileViewModelTest.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.profile.RegisterProfileViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.register.RegisterViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:RegisterViewModelTest.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.register.RegisterViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ReviewAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.review.ReviewAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:ReviewProductFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.review.ReviewProductFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ReviewViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.review.ReviewViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.search.SearchAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchStoreFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.search.SearchStoreFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:SplashFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.splash.SplashFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:SplashFragmentTest.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.splash.SplashFragmentTest.kt</ID>
+    <ID>NewLineAtEndOfFile:StoreListViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.store.StoreListViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:StoreListViewModelTest.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.store.StoreListViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:TextWatcherConfiguration.kt$id.rifqipadisiliwangi.tokopaerbe.utils.TextWatcherConfiguration.kt</ID>
+    <ID>NewLineAtEndOfFile:TransactionAdapter.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.transaction.TransactionAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:TransactionFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.transaction.TransactionFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:ViewHolderBinder.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.ViewHolderBinder.kt</ID>
+    <ID>NewLineAtEndOfFile:WishlistAdapterItem.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.wishlist.WishlistAdapterItem.kt</ID>
+    <ID>NewLineAtEndOfFile:WishlistFragment.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.wishlist.WishlistFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:WishlistItemViewHolder.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.common.adapter.wishlist.WishlistItemViewHolder.kt</ID>
+    <ID>NewLineAtEndOfFile:WishlistViewModel.kt$id.rifqipadisiliwangi.tokopaerbe.presentation.feature.wishlist.WishlistViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:utils.kt$id.rifqipadisiliwangi.tokopaerbe.utils.utils.kt</ID>
+    <ID>PrintStackTrace:ApiException.kt$ApiException$e</ID>
+    <ID>PrintStackTrace:ImageSaver.kt$ImageSaver$e</ID>
+    <ID>PrintStackTrace:RegisterProfileFragment.kt$RegisterProfileFragment$e</ID>
+    <ID>TooGenericExceptionCaught:ApiException.kt$ApiException$e: Exception</ID>
+    <ID>TooManyFunctions:LoginFragment.kt$LoginFragment : BaseFragment</ID>
+    <ID>TooManyFunctions:RegisterFragment.kt$RegisterFragment : BaseFragment</ID>
+    <ID>TooManyFunctions:RegisterProfileFragment.kt$RegisterProfileFragment : BaseFragmentIOnBackPressed</ID>
+    <ID>TooManyFunctions:StoreFragment.kt$StoreFragment : BaseFragmentOnFilterListener</ID>
+    <ID>TooManyFunctions:StoreListViewModel.kt$StoreListViewModel : ViewModel</ID>
+    <ID>UnusedPrivateMember:LoginFragment.kt$LoginFragment$private fun isFormValid(): Boolean</ID>
+    <ID>UnusedPrivateMember:MainActivity.kt$MainActivity$private fun showDialog()</ID>
+    <ID>UnusedPrivateMember:RegisterFragment.kt$RegisterFragment$private fun isFormValid(): Boolean</ID>
+    <ID>UnusedPrivateProperty:CartAdapter.kt$CartAdapter$private val viewModel : CartViewModel</ID>
+    <ID>UnusedPrivateProperty:RegisterProfileFragment.kt$RegisterProfileFragment$val type = contentResolver.getType(it)</ID>
+    <ID>VariableNaming:StoreListViewModel.kt$StoreListViewModel$val SearchSuggestionResult: LiveData&lt;ResultWrapper&lt;SearchResponse&gt;&gt; get() = _searchSuggestionResult</ID>
+    <ID>WildcardImport:RegisterProfileViewModelTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

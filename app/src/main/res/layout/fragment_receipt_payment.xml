@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.feature.receipt.ReceiptPaymentFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/menu_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextAppearance="@style/Appbartitle"
+            tools:title="@string/string_status"
+            app:titleCentered="true"
+            app:titleTextColor="?attr/colorControlNormal"
+            app:navigationIconTint="?attr/colorControlNormal"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_approve_receipt_content"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginVertical="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:translationZ="1dp"
+        app:cardCornerRadius="50dp"
+        app:cardBackgroundColor="?attr/colorControlNormal"
+        android:backgroundTint="@color/secondary_purple"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_approve"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:src="@drawable/ic_approve"
+            android:layout_gravity="center"
+            android:contentDescription="@string/string_approve" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_receipt_content"
+        android:layout_width="match_parent"
+        android:layout_height="296dp"
+        android:layout_marginVertical="64dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/tv_title_receipt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/string_pembayaran_berhasil"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="48dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/primary_purple"/>
+
+            <RatingBar
+                android:id="@+id/rating_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_receipt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_marginVertical="8dp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:isIndicator="false" />
+
+            <TextView
+                android:id="@+id/tv_review_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/string_pembayaran_berhasil"
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/rating_product"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="?attr/colorControlNormal"/>
+            
+            <EditText
+                android:id="@+id/et_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                tools:hint="@string/string_beri_ulasan_product"
+                android:gravity="top"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:textColor="?attr/colorControlNormal"
+                android:textColorHint="?attr/colorControlNormal"
+                android:fontFamily="@font/poppins"
+                android:background="@drawable/rounded_background"
+                app:layout_constraintTop_toBottomOf="@+id/tv_review_product"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/id_transaksi"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="16dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cv_receipt_content"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_dummy_id"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:maxLength="20"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_id"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_id"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_status"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_id"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_berhasil"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_status"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_status"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_tanggal"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_status"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_dummy_tanggal"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_date"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_date"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_waktu"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_date"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_dummy_waktu"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_time"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_time"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title_payment_methods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_metode_pembayaran"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_time"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_payment_methods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_dummy_payment_methods"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_payment_methods"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_payment_methods"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_total"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_payment_methods"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_content_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/string_dummy_total"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="?attr/colorControlNormal"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_total"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_total"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/divider_sechond"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorControlNormal"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_purple"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingTop="10dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="24dp"
+        tools:text="@string/string_selesai"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider_sechond" />
+
+
+
+    <include
+        android:id="@+id/layout_state_receiptd"
+        layout="@layout/common_layout_content_state"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

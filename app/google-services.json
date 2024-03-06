@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "768792831002",
+    "project_id": "tokopaerbe-26552",
+    "storage_bucket": "tokopaerbe-26552.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768792831002:android:70014627747c89225e9da3",
+        "android_client_info": {
+          "package_name": "id.rifqipadisiliwangi.tokopaerbe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQYNnF3LIJQtuh5UT7fAOXw12bhrCayYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
