@@ -1,6 +1,6 @@
 # TokoPaerbe
 
-A brief description of your project and its objectives.
+This project is the final project of the Android trainee program at PT Phincon over a period of 3 months.
 
 ## Tech Stack
 
