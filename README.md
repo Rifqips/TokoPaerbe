@@ -7,6 +7,9 @@ This project is the final project of the Android trainee program at PT Phincon o
 ### Android Jetpack
 The project utilizes Android Jetpack components for robust and modern Android app development, including LiveData and ViewModel for managing UI-related data.
 
+### Single activity
+Using navigation lifecycle
+
 ### Retrofit & OkHttp
 API integration is handled using Retrofit and OkHttp, with JWT token authentication for secure communication.
 
@@ -50,3 +53,6 @@ Version control is handled with Git and GitLab for source code management and co
 ### Code Quality Tools
 - **JaCoCo**: For Java code coverage analysis.
 - **Detekt**: For static code analysis and improving code quality.
+
+![Layout (1)](https://github.com/user-attachments/assets/28b2d3c4-fb59-42ee-bf1d-87f69e17f489)
+
